@@ -1,0 +1,161 @@
+[
+  {
+    "Kind": null,
+    "Location": "eastus",
+    "Name": "kv-use-shared-dev",
+    "ResourceGroup": "rg-use-shared-dev",
+    "Sku": null,
+    "Tags": {
+      "Environment": "Development"
+    },
+    "Type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "Kind": "StorageV2",
+    "Location": "eastus",
+    "Name": "stouseshareddev",
+    "ResourceGroup": "rg-use-shared-dev",
+    "Sku": "Standard_LRS",
+    "Tags": {
+      "Environment": "Development"
+    },
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Kind": null,
+    "Location": "unitedstates",
+    "Name": "onwardplatformsb2c.onmicrosoft.com",
+    "ResourceGroup": "rg-dx-b2c-use-dev",
+    "Sku": "PremiumP1",
+    "Tags": null,
+    "Type": "Microsoft.AzureActiveDirectory/b2cDirectories"
+  },
+  {
+    "Kind": null,
+    "Location": "eastus",
+    "Name": "DefaultWorkspace-3a083da7-77cd-484f-b1fa-cbd058e12c42-EUS",
+    "ResourceGroup": "DefaultResourceGroup-EUS",
+    "Sku": null,
+    "Tags": null,
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Kind": null,
+    "Location": "unitedstates",
+    "Name": "infracodebase.onmicrosoft.com",
+    "ResourceGroup": "DefaultResourceGroup-EUS",
+    "Sku": "PremiumP1",
+    "Tags": null,
+    "Type": "Microsoft.AzureActiveDirectory/b2cDirectories"
+  },
+  {
+    "Kind": "StorageV2",
+    "Location": "eastus2",
+    "Name": "stouse2icbdev",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": "Standard_LRS",
+    "Tags": {
+      "App": "Infracodebase",
+      "Creator": "Terraform",
+      "Environment": "Development"
+    },
+    "Type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "Kind": "linux",
+    "Location": "eastus2",
+    "Name": "asp-use2-infracodebase-dev",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": "B2",
+    "Tags": {
+      "App": "Infracodebase",
+      "Creator": "Terraform",
+      "Environment": "Development"
+    },
+    "Type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "Kind": null,
+    "Location": "eastus2",
+    "Name": "psqlflxsvr-use2-infracodebase-dev",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": "Standard_B1ms",
+    "Tags": {
+      "App": "Infracodebase",
+      "Creator": "Terraform",
+      "Environment": "Development"
+    },
+    "Type": "Microsoft.DBforPostgreSQL/flexibleServers"
+  },
+  {
+    "Kind": null,
+    "Location": "eastus2",
+    "Name": "kv-use2-icb-dev",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": null,
+    "Tags": {
+      "App": "Infracodebase",
+      "Creator": "Terraform",
+      "Environment": "Development"
+    },
+    "Type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "Kind": null,
+    "Location": "eastus2",
+    "Name": "log-use2-infracodebase-dev",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": null,
+    "Tags": {
+      "App": "Infracodebase",
+      "Creator": "Terraform",
+      "Environment": "Development"
+    },
+    "Type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "Kind": "Node.JS",
+    "Location": "eastus2",
+    "Name": "appi-use2-infracodebase-dev",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": null,
+    "Tags": {
+      "App": "Infracodebase",
+      "Creator": "Terraform",
+      "Environment": "Development"
+    },
+    "Type": "Microsoft.Insights/components"
+  },
+  {
+    "Kind": null,
+    "Location": "global",
+    "Name": "Failure Anomalies - appi-use2-infracodebase-dev",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": null,
+    "Tags": {},
+    "Type": "microsoft.alertsmanagement/smartDetectorAlertRules"
+  },
+  {
+    "Kind": "app,linux,container",
+    "Location": "eastus2",
+    "Name": "app-infracodebase-use2-dev",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": null,
+    "Tags": {
+      "App": "Infracodebase",
+      "Creator": "Terraform",
+      "Environment": "Development",
+      "hidden-link: /app-insights-resource-id": "/subscriptions/3a083da7-77cd-484f-b1fa-cbd058e12c42/resourceGroups/rg-use2-infracodebase-dev/providers/microsoft.insights/components/appi-use2-infracodebase-dev"
+    },
+    "Type": "Microsoft.Web/sites"
+  },
+  {
+    "Kind": null,
+    "Location": "eastus2",
+    "Name": "dev.infracodebase.com",
+    "ResourceGroup": "rg-use2-infracodebase-dev",
+    "Sku": null,
+    "Tags": null,
+    "Type": "Microsoft.Web/certificates"
+  }
+]

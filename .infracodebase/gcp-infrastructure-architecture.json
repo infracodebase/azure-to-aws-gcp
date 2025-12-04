@@ -1,0 +1,222 @@
+{
+  "nodes": [
+    {
+      "id": "vpc",
+      "label": "VPC Network",
+      "subtitle": "infracodebase-dev-vpc",
+      "icon": "/icons/gcp/network/network.png"
+    },
+    {
+      "id": "private-subnet",
+      "label": "Private Subnet",
+      "subtitle": "infracodebase-dev-private",
+      "icon": "/icons/gcp/network/network.png"
+    },
+    {
+      "id": "public-subnet",
+      "label": "Public Subnet",
+      "subtitle": "infracodebase-dev-public",
+      "icon": "/icons/gcp/network/network.png"
+    },
+    {
+      "id": "cloud-run",
+      "label": "Cloud Run",
+      "subtitle": "infracodebase-dev-service",
+      "icon": "/icons/gcp/compute/run.png"
+    },
+    {
+      "id": "cloud-sql",
+      "label": "Cloud SQL PostgreSQL",
+      "subtitle": "infracodebase-dev-postgresql",
+      "icon": "/icons/gcp/database/sql.png"
+    },
+    {
+      "id": "cloud-storage",
+      "label": "Cloud Storage",
+      "subtitle": "infracodebase-dev-storage",
+      "icon": "/icons/gcp/storage/storage.png"
+    },
+    {
+      "id": "kms",
+      "label": "Cloud KMS",
+      "subtitle": "infracodebase-dev-key",
+      "icon": "/icons/gcp/security/key-management-service.png"
+    },
+    {
+      "id": "cloud-logging",
+      "label": "Cloud Logging",
+      "subtitle": "infracodebase-dev-app-logs",
+      "icon": "/icons/gcp/operations/logging.png"
+    },
+    {
+      "id": "service-account",
+      "label": "Service Account",
+      "subtitle": "infracodebase-dev-cloud-run-sa",
+      "icon": "/icons/gcp/security/iam.png"
+    },
+    {
+      "id": "vpc-connector",
+      "label": "VPC Access Connector",
+      "subtitle": "infracodebase-dev-connector",
+      "icon": "/icons/gcp/security/access-context-manager.png"
+    },
+    {
+      "id": "cloud-router",
+      "label": "Cloud Router",
+      "subtitle": "infracodebase-dev-router",
+      "icon": "/icons/gcp/network/router.png"
+    },
+    {
+      "id": "cloud-nat",
+      "label": "Cloud NAT",
+      "subtitle": "infracodebase-dev-nat",
+      "icon": "/icons/gcp/network/nat.png"
+    },
+    {
+      "id": "secret-manager",
+      "label": "Secret Manager",
+      "subtitle": "infracodebase-dev-db-password",
+      "icon": "/icons/gcp/security/secret-manager.png"
+    },
+    {
+      "id": "firewall-http",
+      "label": "Firewall Rule",
+      "subtitle": "allow-http-https",
+      "icon": "/icons/gcp/network/firewall-rules.png"
+    },
+    {
+      "id": "firewall-internal",
+      "label": "Firewall Rule",
+      "subtitle": "allow-internal",
+      "icon": "/icons/gcp/network/firewall-rules.png"
+    }
+  ],
+  "edges": [
+    {
+      "id": "vpc-contains-private",
+      "source": "vpc",
+      "target": "private-subnet",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-contains-public",
+      "source": "vpc",
+      "target": "public-subnet",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-has-router",
+      "source": "vpc",
+      "target": "cloud-router",
+      "label": "has"
+    },
+    {
+      "id": "vpc-protected-by-http",
+      "source": "vpc",
+      "target": "firewall-http",
+      "label": "protected by"
+    },
+    {
+      "id": "vpc-protected-by-internal",
+      "source": "vpc",
+      "target": "firewall-internal",
+      "label": "protected by"
+    },
+    {
+      "id": "router-has-nat",
+      "source": "cloud-router",
+      "target": "cloud-nat",
+      "label": "has"
+    },
+    {
+      "id": "cloud-run-connects-vpc",
+      "source": "cloud-run",
+      "target": "vpc-connector",
+      "label": "connects via"
+    },
+    {
+      "id": "vpc-connector-connects-vpc",
+      "source": "vpc-connector",
+      "target": "vpc",
+      "label": "connects to"
+    },
+    {
+      "id": "cloud-run-connects-sql",
+      "source": "cloud-run",
+      "target": "cloud-sql",
+      "label": "connects to"
+    },
+    {
+      "id": "cloud-run-uses-storage",
+      "source": "cloud-run",
+      "target": "cloud-storage",
+      "label": "uses"
+    },
+    {
+      "id": "cloud-run-logs-to",
+      "source": "cloud-run",
+      "target": "cloud-logging",
+      "label": "logs to"
+    },
+    {
+      "id": "cloud-run-uses-service-account",
+      "source": "cloud-run",
+      "target": "service-account",
+      "label": "uses"
+    },
+    {
+      "id": "cloud-run-reads-secrets",
+      "source": "cloud-run",
+      "target": "secret-manager",
+      "label": "reads from"
+    },
+    {
+      "id": "sql-in-private",
+      "source": "cloud-sql",
+      "target": "private-subnet",
+      "label": "deployed in"
+    },
+    {
+      "id": "kms-encrypts-storage",
+      "source": "kms",
+      "target": "cloud-storage",
+      "label": "encrypts"
+    },
+    {
+      "id": "kms-encrypts-sql",
+      "source": "kms",
+      "target": "cloud-sql",
+      "label": "encrypts"
+    },
+    {
+      "id": "secret-manager-stores-password",
+      "source": "secret-manager",
+      "target": "cloud-sql",
+      "label": "stores password for"
+    },
+    {
+      "id": "service-account-accesses-storage",
+      "source": "service-account",
+      "target": "cloud-storage",
+      "label": "accesses"
+    },
+    {
+      "id": "service-account-accesses-sql",
+      "source": "service-account",
+      "target": "cloud-sql",
+      "label": "accesses"
+    },
+    {
+      "id": "service-account-accesses-secrets",
+      "source": "service-account",
+      "target": "secret-manager",
+      "label": "accesses"
+    },
+    {
+      "id": "cloud-logging-stores-in-storage",
+      "source": "cloud-logging",
+      "target": "cloud-storage",
+      "label": "stores logs in"
+    }
+  ]
+}

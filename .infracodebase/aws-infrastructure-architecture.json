@@ -1,0 +1,258 @@
+{
+  "nodes": [
+    {
+      "id": "vpc",
+      "label": "VPC",
+      "subtitle": "infracodebase-dev-vpc",
+      "icon": "/icons/aws/network/vpc.png"
+    },
+    {
+      "id": "public-subnet-1",
+      "label": "Public Subnet",
+      "subtitle": "us-east-1a",
+      "icon": "/icons/aws/network/public-subnet.png"
+    },
+    {
+      "id": "public-subnet-2",
+      "label": "Public Subnet",
+      "subtitle": "us-east-1b",
+      "icon": "/icons/aws/network/public-subnet.png"
+    },
+    {
+      "id": "private-subnet-1",
+      "label": "Private Subnet",
+      "subtitle": "us-east-1a",
+      "icon": "/icons/aws/network/private-subnet.png"
+    },
+    {
+      "id": "private-subnet-2",
+      "label": "Private Subnet",
+      "subtitle": "us-east-1b",
+      "icon": "/icons/aws/network/private-subnet.png"
+    },
+    {
+      "id": "alb",
+      "label": "Application Load Balancer",
+      "subtitle": "infracodebase-dev-alb",
+      "icon": "/icons/aws/network/elb-application-load-balancer.png"
+    },
+    {
+      "id": "ecs-cluster",
+      "label": "ECS Cluster",
+      "subtitle": "infracodebase-dev-cluster",
+      "icon": "/icons/aws/compute/elastic-container-service.png"
+    },
+    {
+      "id": "fargate-service",
+      "label": "Fargate Service",
+      "subtitle": "infracodebase-dev-service",
+      "icon": "/icons/aws/compute/fargate.png"
+    },
+    {
+      "id": "rds-postgresql",
+      "label": "RDS PostgreSQL",
+      "subtitle": "infracodebase-dev-postgresql",
+      "icon": "/icons/aws/database/rds-postgresql-instance.png"
+    },
+    {
+      "id": "s3-bucket",
+      "label": "S3 Bucket",
+      "subtitle": "infracodebase-dev-storage",
+      "icon": "/icons/aws/storage/simple-storage-service-s3-bucket-with-objects.png"
+    },
+    {
+      "id": "kms",
+      "label": "KMS Key",
+      "subtitle": "infracodebase-dev-key",
+      "icon": "/icons/aws/security/key-management-service.png"
+    },
+    {
+      "id": "cloudwatch",
+      "label": "CloudWatch Logs",
+      "subtitle": "/ecs/infracodebase-dev-app",
+      "icon": "/icons/aws/management/cloudwatch.png"
+    },
+    {
+      "id": "iam-execution-role",
+      "label": "IAM Role",
+      "subtitle": "ECS Task Execution",
+      "icon": "/icons/aws/security/identity-and-access-management-iam-aws-sts.png"
+    },
+    {
+      "id": "iam-task-role",
+      "label": "IAM Role",
+      "subtitle": "ECS Task Role",
+      "icon": "/icons/aws/security/identity-and-access-management-iam-aws-sts.png"
+    },
+    {
+      "id": "nat-gateway-1",
+      "label": "NAT Gateway",
+      "subtitle": "us-east-1a",
+      "icon": "/icons/aws/network/nat-gateway.png"
+    },
+    {
+      "id": "nat-gateway-2",
+      "label": "NAT Gateway",
+      "subtitle": "us-east-1b",
+      "icon": "/icons/aws/network/nat-gateway.png"
+    },
+    {
+      "id": "igw",
+      "label": "Internet Gateway",
+      "subtitle": "infracodebase-dev-igw",
+      "icon": "/icons/aws/general/internet-gateway.png"
+    }
+  ],
+  "edges": [
+    {
+      "id": "vpc-contains-public-1",
+      "source": "vpc",
+      "target": "public-subnet-1",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-contains-public-2",
+      "source": "vpc",
+      "target": "public-subnet-2",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-contains-private-1",
+      "source": "vpc",
+      "target": "private-subnet-1",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-contains-private-2",
+      "source": "vpc",
+      "target": "private-subnet-2",
+      "label": "contains"
+    },
+    {
+      "id": "vpc-connects-igw",
+      "source": "vpc",
+      "target": "igw",
+      "label": "connects to"
+    },
+    {
+      "id": "public-1-hosts-nat-1",
+      "source": "public-subnet-1",
+      "target": "nat-gateway-1",
+      "label": "hosts"
+    },
+    {
+      "id": "public-2-hosts-nat-2",
+      "source": "public-subnet-2",
+      "target": "nat-gateway-2",
+      "label": "hosts"
+    },
+    {
+      "id": "public-1-hosts-alb",
+      "source": "public-subnet-1",
+      "target": "alb",
+      "label": "hosts"
+    },
+    {
+      "id": "public-2-hosts-alb",
+      "source": "public-subnet-2",
+      "target": "alb",
+      "label": "hosts"
+    },
+    {
+      "id": "private-1-hosts-fargate",
+      "source": "private-subnet-1",
+      "target": "fargate-service",
+      "label": "hosts"
+    },
+    {
+      "id": "private-2-hosts-fargate",
+      "source": "private-subnet-2",
+      "target": "fargate-service",
+      "label": "hosts"
+    },
+    {
+      "id": "private-1-hosts-rds",
+      "source": "private-subnet-1",
+      "target": "rds-postgresql",
+      "label": "hosts"
+    },
+    {
+      "id": "private-2-hosts-rds",
+      "source": "private-subnet-2",
+      "target": "rds-postgresql",
+      "label": "hosts"
+    },
+    {
+      "id": "alb-routes-fargate",
+      "source": "alb",
+      "target": "fargate-service",
+      "label": "routes to"
+    },
+    {
+      "id": "fargate-connects-rds",
+      "source": "fargate-service",
+      "target": "rds-postgresql",
+      "label": "connects to"
+    },
+    {
+      "id": "fargate-uses-s3",
+      "source": "fargate-service",
+      "target": "s3-bucket",
+      "label": "uses"
+    },
+    {
+      "id": "fargate-logs-cloudwatch",
+      "source": "fargate-service",
+      "target": "cloudwatch",
+      "label": "logs to"
+    },
+    {
+      "id": "fargate-uses-cluster",
+      "source": "fargate-service",
+      "target": "ecs-cluster",
+      "label": "runs in"
+    },
+    {
+      "id": "fargate-assumes-execution",
+      "source": "fargate-service",
+      "target": "iam-execution-role",
+      "label": "assumes"
+    },
+    {
+      "id": "fargate-assumes-task",
+      "source": "fargate-service",
+      "target": "iam-task-role",
+      "label": "assumes"
+    },
+    {
+      "id": "kms-encrypts-s3",
+      "source": "kms",
+      "target": "s3-bucket",
+      "label": "encrypts"
+    },
+    {
+      "id": "kms-encrypts-rds",
+      "source": "kms",
+      "target": "rds-postgresql",
+      "label": "encrypts"
+    },
+    {
+      "id": "kms-encrypts-cloudwatch",
+      "source": "kms",
+      "target": "cloudwatch",
+      "label": "encrypts"
+    },
+    {
+      "id": "private-1-uses-nat-1",
+      "source": "private-subnet-1",
+      "target": "nat-gateway-1",
+      "label": "routes via"
+    },
+    {
+      "id": "private-2-uses-nat-2",
+      "source": "private-subnet-2",
+      "target": "nat-gateway-2",
+      "label": "routes via"
+    }
+  ]
+}

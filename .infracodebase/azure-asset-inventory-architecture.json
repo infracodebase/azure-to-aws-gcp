@@ -1,0 +1,234 @@
+{
+  "nodes": [
+    {
+      "id": "rg-shared",
+      "label": "Resource Group",
+      "subtitle": "rg-use-shared-dev",
+      "icon": "/icons/azure/general/resource-group.png"
+    },
+    {
+      "id": "kv-shared",
+      "label": "Key Vault",
+      "subtitle": "kv-use-shared-dev",
+      "icon": "/icons/azure/security/azure-key-vault-managed-hsm.png"
+    },
+    {
+      "id": "storage-shared",
+      "label": "Storage Account",
+      "subtitle": "stouseshareddev",
+      "icon": "/icons/azure/storage/storage-account-blob.png"
+    },
+    {
+      "id": "rg-b2c",
+      "label": "Resource Group",
+      "subtitle": "rg-dx-b2c-use-dev",
+      "icon": "/icons/azure/general/resource-group.png"
+    },
+    {
+      "id": "b2c-platform",
+      "label": "Azure AD B2C",
+      "subtitle": "onwardplatformsb2c",
+      "icon": "/icons/azure/identity/azure-active-directory-(legacy).png"
+    },
+    {
+      "id": "rg-infracodebase",
+      "label": "Resource Group",
+      "subtitle": "rg-use2-infracodebase-dev",
+      "icon": "/icons/azure/general/resource-group.png"
+    },
+    {
+      "id": "webapp",
+      "label": "App Service",
+      "subtitle": "app-infracodebase-use2-dev",
+      "icon": "/icons/azure/dynamics-365/application-field-service.png"
+    },
+    {
+      "id": "asp",
+      "label": "App Service Plan",
+      "subtitle": "asp-use2-infracodebase-dev",
+      "icon": "/icons/azure/application/app-service-plan.png"
+    },
+    {
+      "id": "postgresql",
+      "label": "PostgreSQL",
+      "subtitle": "psqlflxsvr-use2-infracodebase-dev",
+      "icon": "/icons/azure/data/azure-database-for-postgresql.png"
+    },
+    {
+      "id": "storage-icb",
+      "label": "Storage Account",
+      "subtitle": "stouse2icbdev",
+      "icon": "/icons/azure/storage/storage-account-blob.png"
+    },
+    {
+      "id": "kv-icb",
+      "label": "Key Vault",
+      "subtitle": "kv-use2-icb-dev",
+      "icon": "/icons/azure/security/azure-key-vault-managed-hsm.png"
+    },
+    {
+      "id": "appinsights",
+      "label": "Application Insights",
+      "subtitle": "appi-use2-infracodebase-dev",
+      "icon": "/icons/azure/management/application-insights.png"
+    },
+    {
+      "id": "loganalytics",
+      "label": "Log Analytics",
+      "subtitle": "log-use2-infracodebase-dev",
+      "icon": "/icons/azure/management/azure-monitor-log-analytics--health.png"
+    },
+    {
+      "id": "certificate",
+      "label": "SSL Certificate",
+      "subtitle": "dev.infracodebase.com",
+      "icon": "/icons/azure/iot/certificate.png"
+    },
+    {
+      "id": "rg-default",
+      "label": "Resource Group",
+      "subtitle": "DefaultResourceGroup-EUS",
+      "icon": "/icons/azure/general/resource-group.png"
+    },
+    {
+      "id": "b2c-icb",
+      "label": "Azure AD B2C",
+      "subtitle": "infracodebase.onmicrosoft.com",
+      "icon": "/icons/azure/identity/azure-active-directory-(legacy).png"
+    },
+    {
+      "id": "loganalytics-default",
+      "label": "Log Analytics",
+      "subtitle": "DefaultWorkspace",
+      "icon": "/icons/azure/management/azure-monitor-log-analytics--health.png"
+    }
+  ],
+  "edges": [
+    {
+      "id": "shared-contains-kv",
+      "source": "rg-shared",
+      "target": "kv-shared",
+      "label": "contains"
+    },
+    {
+      "id": "shared-contains-storage",
+      "source": "rg-shared",
+      "target": "storage-shared",
+      "label": "contains"
+    },
+    {
+      "id": "b2c-contains-directory",
+      "source": "rg-b2c",
+      "target": "b2c-platform",
+      "label": "contains"
+    },
+    {
+      "id": "icb-contains-webapp",
+      "source": "rg-infracodebase",
+      "target": "webapp",
+      "label": "contains"
+    },
+    {
+      "id": "icb-contains-asp",
+      "source": "rg-infracodebase",
+      "target": "asp",
+      "label": "contains"
+    },
+    {
+      "id": "icb-contains-postgresql",
+      "source": "rg-infracodebase",
+      "target": "postgresql",
+      "label": "contains"
+    },
+    {
+      "id": "icb-contains-storage",
+      "source": "rg-infracodebase",
+      "target": "storage-icb",
+      "label": "contains"
+    },
+    {
+      "id": "icb-contains-kv",
+      "source": "rg-infracodebase",
+      "target": "kv-icb",
+      "label": "contains"
+    },
+    {
+      "id": "icb-contains-appinsights",
+      "source": "rg-infracodebase",
+      "target": "appinsights",
+      "label": "contains"
+    },
+    {
+      "id": "icb-contains-loganalytics",
+      "source": "rg-infracodebase",
+      "target": "loganalytics",
+      "label": "contains"
+    },
+    {
+      "id": "icb-contains-certificate",
+      "source": "rg-infracodebase",
+      "target": "certificate",
+      "label": "contains"
+    },
+    {
+      "id": "default-contains-b2c",
+      "source": "rg-default",
+      "target": "b2c-icb",
+      "label": "contains"
+    },
+    {
+      "id": "default-contains-loganalytics",
+      "source": "rg-default",
+      "target": "loganalytics-default",
+      "label": "contains"
+    },
+    {
+      "id": "webapp-runs-on-asp",
+      "source": "webapp",
+      "target": "asp",
+      "label": "runs on"
+    },
+    {
+      "id": "webapp-connects-postgresql",
+      "source": "webapp",
+      "target": "postgresql",
+      "label": "connects to"
+    },
+    {
+      "id": "webapp-uses-storage",
+      "source": "webapp",
+      "target": "storage-icb",
+      "label": "uses"
+    },
+    {
+      "id": "webapp-reads-secrets",
+      "source": "webapp",
+      "target": "kv-icb",
+      "label": "reads secrets"
+    },
+    {
+      "id": "webapp-monitored-by-appinsights",
+      "source": "webapp",
+      "target": "appinsights",
+      "label": "monitored by"
+    },
+    {
+      "id": "webapp-uses-certificate",
+      "source": "webapp",
+      "target": "certificate",
+      "label": "uses"
+    },
+    {
+      "id": "appinsights-logs-to-analytics",
+      "source": "appinsights",
+      "target": "loganalytics",
+      "label": "logs to"
+    },
+    {
+      "id": "webapp-authenticates-b2c",
+      "source": "webapp",
+      "target": "b2c-icb",
+      "label": "authenticates with"
+    }
+  ]
+}
