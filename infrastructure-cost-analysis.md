@@ -244,13 +244,13 @@
 ## Recommendations
 
 ### For Development Workloads
-**Winner: GCP** 🏆
+**Winner: GCP**
 - 61% cost savings vs AWS
 - Serverless architecture reduces operational overhead
 - Pay-per-use model ideal for development
 
 ### For Production Workloads
-**Winner: GCP** 🏆
+**Winner: GCP**
 - 46% cost savings vs AWS
 - Better auto-scaling capabilities
 - Strong security and compliance features

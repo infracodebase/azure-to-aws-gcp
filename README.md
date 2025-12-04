@@ -2,7 +2,7 @@
 
 This repository contains Terraform configurations for deploying the Infracodebase application across multiple cloud providers (AWS, GCP, and Azure), along with comprehensive cost analysis and architecture diagrams.
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 The infrastructure mirrors your existing Azure setup across different cloud providers:
 
@@ -10,7 +10,7 @@ The infrastructure mirrors your existing Azure setup across different cloud prov
 - **GCP**: Cloud Run + Cloud SQL + VPC Networking
 - **Azure**: App Service + PostgreSQL + Application Gateway (current)
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ├── aws-infrastructure/          # AWS Terraform configuration
@@ -35,7 +35,7 @@ The infrastructure mirrors your existing Azure setup across different cloud prov
 └── terraform-validation-report.md  # Validation results
 ```
 
-## 🎯 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -61,7 +61,7 @@ terraform plan -var="gcp_project_id=your-project-id"
 terraform apply -var="gcp_project_id=your-project-id"
 ```
 
-## 💰 Cost Analysis
+## Cost Analysis
 
 | Provider | Development | Production | Annual (Dev) |
 |----------|-------------|------------|--------------|
@@ -73,7 +73,7 @@ terraform apply -var="gcp_project_id=your-project-id"
 
 See [infrastructure-cost-analysis.md](./infrastructure-cost-analysis.md) for detailed breakdown.
 
-## 🏛️ Architecture Diagrams
+## Architecture Diagrams
 
 Visual architecture diagrams are available in the repository:
 
@@ -81,7 +81,7 @@ Visual architecture diagrams are available in the repository:
 - **GCP Infrastructure**: Cloud Run, Cloud SQL, VPC with private networking
 - **Azure Infrastructure**: Current App Service setup with PostgreSQL
 
-## 🔒 Security Features
+## Security Features
 
 All configurations implement security best practices:
 
@@ -91,16 +91,16 @@ All configurations implement security best practices:
 - **Secrets Management**: Secure credential storage
 - **SSL/TLS**: Enforced encryption in transit
 
-## 📊 Validation Results
+## Validation Results
 
 Both AWS and GCP configurations have been validated:
 
-- ✅ **AWS**: 35 resources, fully validated and planned
-- ✅ **GCP**: ~25 resources, validated with correct syntax
+- **AWS**: 35 resources, fully validated and planned
+- **GCP**: ~25 resources, validated with correct syntax
 
 See [terraform-validation-report.md](./terraform-validation-report.md) for details.
 
-## 🚀 Migration Recommendations
+## Migration Recommendations
 
 ### Development Workloads
 **Recommended: GCP**
@@ -119,7 +119,7 @@ See [terraform-validation-report.md](./terraform-validation-report.md) for detai
 2. **Phase 2**: Optimize current Azure setup
 3. **Phase 3**: Evaluate production migration
 
-## 📚 Documentation
+## Documentation
 
 Detailed documentation is available in each directory:
 
@@ -128,7 +128,7 @@ Detailed documentation is available in each directory:
 - [Cost Analysis Report](./infrastructure-cost-analysis.md)
 - [Validation Report](./terraform-validation-report.md)
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 - **Infrastructure as Code**: Terraform
 - **Cloud Providers**: AWS, Google Cloud Platform, Azure
@@ -137,7 +137,7 @@ Detailed documentation is available in each directory:
 - **Monitoring**: CloudWatch, Cloud Logging, Application Insights
 - **Security**: KMS, Cloud KMS, Key Vault
 
-## 📞 Support
+## Support
 
 For questions or issues:
 
@@ -145,7 +145,7 @@ For questions or issues:
 2. Review the validation and cost analysis reports
 3. Consult the Terraform documentation for each cloud provider
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 

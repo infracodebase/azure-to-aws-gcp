@@ -121,4 +121,4 @@ To destroy the infrastructure:
 terraform destroy
 ```
 
-⚠️ **Warning**: This will permanently delete all resources and data.
+**Warning**: This will permanently delete all resources and data.
